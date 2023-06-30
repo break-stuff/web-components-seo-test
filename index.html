@@ -4,35 +4,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="google-site-verification" content="ETIjM-RWVSXqQr8764dralqVWZZAA2MAJnsc6yHBhEY" />
     <title>Web Components SEO Test</title>
-    <script>
-      customElements.define(
-        "my-h1",
-        class extends HTMLElement {
-          constructor() {
-            super();
-            this.attachShadow({ mode: "open" });
-            this.shadowRoot.innerHTML = `
-              <h1>Web Components SEO Test</h1>
-            `;
-          }
-        }
-      );
-
-      customElements.define(
-        "my-h2",
-        class extends HTMLElement {
-          constructor() {
-            super();
-            this.attachShadow({ mode: "open" });
-            this.shadowRoot.innerHTML = `
-              <h2>
-                <slot></slot>
-              </h2>
-            `;
-          }
-        }
-      );
-    </script>
   </head>
   <body>
     <my-h1></my-h1>
@@ -71,5 +42,34 @@
       dolor eu ex. Pellentesque non blandit tortor.
     </p>
 
+    <script>
+      customElements.define(
+        "my-h1",
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: "open" });
+            this.shadowRoot.innerHTML = `
+              <h1>Web Components SEO Test</h1>
+            `;
+          }
+        }
+      );
+
+      customElements.define(
+        "my-h2",
+        class extends HTMLElement {
+          constructor() {
+            super();
+            this.attachShadow({ mode: "open" });
+            this.shadowRoot.innerHTML = `
+              <h2>
+                <slot></slot>
+              </h2>
+            `;
+          }
+        }
+      );
+    </script>
   </body>
 </html>
